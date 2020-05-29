@@ -23,7 +23,7 @@ namespace Hospital.Pages
     public Child(Hospitals[] hospitals)
     {
       InitializeComponent();
-            LB.ItemSource = hospitals;
+            LB.ItemsSource = hospitals;
     }
   }
 }
