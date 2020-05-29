@@ -23,6 +23,8 @@ namespace Hospital
     public MainWindow()
     {
       InitializeComponent();
+            OpenData.LoadData();
+            var x = OpenData.GetAdultHospitals();
     }
   }
 }
