@@ -24,7 +24,8 @@ namespace Hospital
     {
       InitializeComponent();
             OpenData.LoadData();
-            var x = OpenData.GetAdultHospitals();
+            var x = OpenData.GetChildrenHospitals();
+            var y = OpenData.GetAdultHospitals();
     }
   }
 }
