@@ -20,9 +20,10 @@ namespace Hospital.Pages
   /// </summary>
   public partial class Adult : Page
   {
-    public Adult()
+    public Adult(Hospitals[] hospitals)
     {
       InitializeComponent();
+      LB.ItemsSource = hospitals;
     }
   }
 }

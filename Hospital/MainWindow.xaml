@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800">
     <Window.Resources>
-        <Style x:Key="TabButtonOn">
+        <Style x:Key="TabBorderOn">
             <Setter Property="ItemsControl.BorderThickness" Value="5 5 5 0"/>
             <Setter Property="ItemsControl.BorderBrush" Value="#FF3F7072"/>
             <Setter Property="ItemsControl.Background" Value="CadetBlue"/>
         </Style>
-        <Style x:Key="TabButtonOff">
+        <Style x:Key="TabBorderOff">
             <Setter Property="ItemsControl.BorderThickness" Value="2 2 2 0"/>
             <Setter Property="ItemsControl.BorderBrush" Value="#FFA5B5B6"/>
             <Setter Property="ItemsControl.Background">
@@ -58,22 +58,22 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" Margin="20 0 10 0" CornerRadius="10 10 0 0" Style="{StaticResource TabButtonOn}">
+            <Border x:Name="AdultBorder" Grid.Column="0" Margin="20 0 10 0" CornerRadius="10 10 0 0" Style="{StaticResource TabBorderOn}">
                 <Grid>
-                    <Label Content="Взрослые" Style="{StaticResource TabLabelOn}"/>
-                    <Button Opacity="0"/>
+                    <Label x:Name="AdultLabel" Content="Взрослые" Style="{StaticResource TabLabelOn}"/>
+                    <Button x:Name="AdultButton" Opacity="0" Click="AdultButton_Click"/>
                 </Grid>
             </Border>
-            <Border Grid.Column="1" Margin="10 0 20 0" CornerRadius="10 10 0 0" Style="{StaticResource TabButtonOff}">
+            <Border x:Name="ChildBorder" Grid.Column="1" Margin="10 0 20 0" CornerRadius="10 10 0 0" Style="{StaticResource TabBorderOff}">
                 <Grid>
-                    <Label Content="Детские" Style="{StaticResource TabLabelOff}"/>
-                    <Button Opacity="0"/>
+                    <Label x:Name="ChildLabel" Content="Детские" Style="{StaticResource TabLabelOff}"/>
+                    <Button x:Name="ChildButton" Opacity="0" Click="ChildButton_Click"/>
                 </Grid>
             </Border>
 
         </Grid>
 
-        <Frame Grid.Row="2" Background="CadetBlue" Padding="10">
+        <Frame x:Name="MainFrame" Grid.Row="2" Background="CadetBlue" Padding="10" NavigationUIVisibility="Hidden">
             
         </Frame>
 
