@@ -47,27 +47,19 @@ namespace Hospital
 
         public string Specialization { get; set; }
 
-        public string CloseFlag { get; set; }
-
         public string ChiefName { get; set; }
 
         public string ChiefPosition { get; set; }
 
         public string ChiefGender { get; set; }
 
-        public List<ChiefPhoneItem> ChiefPhone { get; set; }
-
         public List<PublicPhoneItem> PublicPhone { get; set; }
-
-        public List<FaxItem> Fax { get; set; }
 
         public List<EmailItem> Email { get; set; }
 
-        //public List<OrgInfoItem> OrgInfo { get; set; }
+        public List<OrgInfoItem> OrgInfo { get; set; }
 
         public List<ObjectAddressItem> ObjectAddress { get; set; }
-
-        public string FullName { get; set; }
 
         public string ShortName { get; set; }
     }
@@ -107,8 +99,6 @@ namespace Hospital
 
         public string ChiefName { get; set; }
 
-        public List<ChiefPhoneItem> ChiefPhone { get; set; }
-
         public string INN { get; set; }
 
         public string KPP { get; set; }
@@ -116,8 +106,6 @@ namespace Hospital
         public string LegalAddress { get; set; }
 
         public string FullName { get; set; }
-
-        public string ChiefGender { get; set; }
     }
 
     public class Available_elementItem
@@ -134,19 +122,6 @@ namespace Hospital
         public string Group_mgn { get; set; }
     }
 
-    public class AvailabilityItem
-    {
-        public List<Available_elementItem> available_element { get; set; }
-
-        public string available_o { get; set; }
-
-        public string available_z { get; set; }
-
-        public string available_s { get; set; }
-
-        public string available_k { get; set; }
-    }
-
     public class ObjectAddressItem
     {
         public string PostalCode { get; set; }
@@ -156,8 +131,6 @@ namespace Hospital
         public string District { get; set; }
 
         public string Address { get; set; }
-
-        public List<AvailabilityItem> Availability { get; set; }
 
         public string Extrainfo { get; set; }
     }
