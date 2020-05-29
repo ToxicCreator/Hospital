@@ -21,18 +21,19 @@ namespace Hospital
   /// </summary>
   public partial class MainWindow : Window
   {
-    Adult adult;
-    Child child = new Child();
+        Adult adult;
+        Child child;
 
     public MainWindow()
     {
       InitializeComponent();
-            OpenData.LoadData();
-            var x = OpenData.GetChildrenHospitals();
-            var y = OpenData.GetAdultHospitals();
+        OpenData.LoadData();
+        Hospitals[] childrenHospitals = OpenData.GetChildrenHospitals();
+        Hospitals[] adultHospitals = OpenData.GetAdultHospitals();
 
-      adult = new Adult(x);
-      MainFrame.Navigate(adult);
+        adult = new Adult(childrenHospitals);
+        child = new Child(adultHospitals);
+        MainFrame.Navigate(adult);
     }
 
     private void AdultButton_Click(object sender, RoutedEventArgs e)
