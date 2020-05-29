@@ -5,8 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="550" Width="800">
+    <Window.Resources>
+        <Style x:Key="TabButtonOn">
+            <Setter Property="ItemsControl.BorderThickness" Value="5 5 5 0"/>
+            <Setter Property="ItemsControl.BorderBrush" Value="#FF3F7072"/>
+            <Setter Property="ItemsControl.Background" Value="CadetBlue"/>
+        </Style>
+        <Style x:Key="TabButtonOff">
+            <Setter Property="ItemsControl.BorderThickness" Value="2 2 2 0"/>
+            <Setter Property="ItemsControl.BorderBrush" Value="#FFA5B5B6"/>
+            <Setter Property="ItemsControl.Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="1,0.5">
+                        <GradientStop Color="#FF9BD7D8" Offset="1"/>
+                        <GradientStop Color="#FF8AC3C5" Offset="0"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TabLabelOn">
+            <Setter Property="ItemsControl.HorizontalAlignment" Value="Center"/>
+            <Setter Property="ItemsControl.Foreground" Value="White"/>
+            <Setter Property="ItemsControl.FontWeight" Value="Bold"/>
+            <Setter Property="ItemsControl.FontSize" Value="16"/>
+        </Style>
+        <Style x:Key="TabLabelOff">
+            <Setter Property="ItemsControl.HorizontalAlignment" Value="Center"/>
+            <Setter Property="ItemsControl.Foreground" Value="#FF535353"/>
+            <Setter Property="ItemsControl.FontWeight" Value="Bold"/>
+            <Setter Property="ItemsControl.FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF9AFFED">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="1,0">
+                    <GradientStop Color="#FF00FFD2" Offset="0.141"/>
+                    <GradientStop Color="#FF9AFFED" Offset="0.687"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Label Content="Больницы города Москвы" FontSize="32" FontWeight="UltraBold" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Margin="20 0 10 0" CornerRadius="10 10 0 0" Style="{StaticResource TabButtonOn}">
+                <Grid>
+                    <Label Content="Взрослые" Style="{StaticResource TabLabelOn}"/>
+                    <Button Opacity="0"/>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Margin="10 0 20 0" CornerRadius="10 10 0 0" Style="{StaticResource TabButtonOff}">
+                <Grid>
+                    <Label Content="Детские" Style="{StaticResource TabLabelOff}"/>
+                    <Button Opacity="0"/>
+                </Grid>
+            </Border>
+
+        </Grid>
+
+        <Frame Grid.Row="2" Background="CadetBlue" Padding="10">
+            
+        </Frame>
+
     </Grid>
 </Window>

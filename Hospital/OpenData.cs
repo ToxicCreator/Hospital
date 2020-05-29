@@ -10,9 +10,9 @@ namespace Hospital
 {
     static class OpenData
     {
-        static Hospital[] adultHospital;
+        static HospitalC[] adultHospital;
 
-        static Hospital[] childHospital;
+        static HospitalC[] childHospital;
 
         public static void LoadData()
         {
@@ -22,16 +22,16 @@ namespace Hospital
             string adultHospitalsJson = File.ReadAllText(pathToAdultHospitals);
             string childHospitalsJson = File.ReadAllText(pathToChildHospitals);
 
-            adultHospital = JsonConvert.DeserializeObject<Hospital[]>(adultHospitalsJson);
-            childHospital = JsonConvert.DeserializeObject<Hospital[]>(childHospitalsJson);
+            adultHospital = JsonConvert.DeserializeObject<HospitalC[]>(adultHospitalsJson);
+            childHospital = JsonConvert.DeserializeObject<HospitalC[]>(childHospitalsJson);
         }
 
-        public static Hospital[] GetChildHospitals()
+        public static HospitalC[] GetChildHospitals()
         {
             return childHospital;
         }
 
-        public static Hospital[] GetAdultHospitals()
+        public static HospitalC[] GetAdultHospitals()
         {
             return adultHospital;
         }
@@ -39,7 +39,7 @@ namespace Hospital
 
 
     }
-    public class Hospital
+    public class HospitalC
     {
         public string PaidServiceInfo { get; set; }
         /// <summary>
