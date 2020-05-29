@@ -43,15 +43,11 @@ namespace Hospital
     {
         public string PaidServiceInfo { get; set; }
 
-        public List<WorkingHoursItem> WorkingHours { get; set; }
-
         public string Specialization { get; set; }
 
         public string ChiefName { get; set; }
 
         public string ChiefPosition { get; set; }
-
-        public string ChiefGender { get; set; }
 
         public List<PublicPhoneItem> PublicPhone { get; set; }
 
@@ -64,26 +60,9 @@ namespace Hospital
         public string ShortName { get; set; }
     }
 
-    public class WorkingHoursItem
-    {
-        public string WorkHours { get; set; }
-
-        public string DayWeek { get; set; }
-    }
-
-    public class ChiefPhoneItem
-    {
-        public List<string> ChiefPhone { get; set; }
-    }
-
     public class PublicPhoneItem
     {
         public List<string> PublicPhone { get; set; }
-    }
-
-    public class FaxItem
-    {
-        public string Fax { get; set; }
     }
 
     public class EmailItem
@@ -106,20 +85,6 @@ namespace Hospital
         public string LegalAddress { get; set; }
 
         public string FullName { get; set; }
-    }
-
-    public class Available_elementItem
-    {
-
-        public string available_index { get; set; }
-
-        public string Area_mgn { get; set; }
-
-        public string Element_mgn { get; set; }
-
-        public string available_degree { get; set; }
-
-        public string Group_mgn { get; set; }
     }
 
     public class ObjectAddressItem
