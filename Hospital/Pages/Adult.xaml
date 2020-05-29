@@ -1,0 +1,113 @@
+﻿<Page x:Class="Hospital.Pages.Adult"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hospital.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Adult">
+
+    <Page.Resources>
+        <Style x:Key="NameItem">
+            <Setter Property="ItemsControl.Margin" Value="0 0 0 0"/>
+            <Setter Property="ItemsControl.FontSize" Value="17"/>
+            <Setter Property="ItemsControl.HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="ItemsControl.FontWeight" Value="Light"/>
+            <Setter Property="ItemsControl.VerticalAlignment" Value="Center"/>
+            <Setter Property="ItemsControl.Background" Value="LightGreen"/>
+        </Style>
+        <Style x:Key="ContentItem">
+            <Setter Property="ItemsControl.Padding" Value="10 5 0 5"/>
+            <Setter Property="ItemsControl.FontSize" Value="16"/>
+            <Setter Property="ItemsControl.FontWeight" Value="ExtraLight"/>
+            <Setter Property="ItemsControl.FontStyle" Value="Italic"/>
+            <!--<Setter Property="ItemsControl.HorizontalAlignment" Value="Left"/>-->
+        </Style>
+    </Page.Resources>
+    <Grid Background="Transparent">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel>
+                <ListBox x:Name="LB">
+                    <ListBox.Template>
+                        <ControlTemplate TargetType="ItemsControl">
+                            <Border>
+                                <ItemsPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </ListBox.Template>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="10 0 10 0">
+                                <Border CornerRadius="50 0 50 0" Background="White" Height="400" BorderThickness="5">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFB9FF66"/>
+                                            <GradientStop Color="#FF68BF00" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="70"/>
+                                            <RowDefinition Height="5"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Label Content="{Binding ShortName}" FontSize="28" FontWeight="SemiBold" FontFamily="Arial" Margin="50 0 0 0" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                        <Separator Grid.Row="1"/>
+                                        <Grid Grid.Row="2" Margin="0 5 0 0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="4*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Grid.Row="0" Content="Специализация:" Style="{StaticResource NameItem}"/>
+                                            <Label Grid.Column="1" Grid.Row="0" Content="{Binding Specialization}" Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="1" Content="Должность:" Style="{StaticResource NameItem}"/>
+                                            <Label Grid.Column="1" Grid.Row="1" Content="{Binding ChiefPosition}" Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="2" Content="ФИО:" Style="{StaticResource NameItem}"/>
+                                            <Label Grid.Column="1" Grid.Row="2" Content="{Binding ChiefName}" Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="3" Content="Платные услуги:" Style="{StaticResource NameItem}"/>
+                                            <Label Grid.Column="1" Grid.Row="3" Content="{Binding PaidServiceInfo}"  Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="4" Content="Телефон:" Style="{StaticResource NameItem}" Background="Aquamarine"/>
+                                            <Label Grid.Column="1" Grid.Row="4" Content="{Binding PublicPhone[0].PublicPhone}" Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="5" Content="Email:" Style="{StaticResource NameItem}" Background="Aquamarine"/>
+                                            <Label Grid.Column="1" Grid.Row="5" Content="{Binding Email[0].Email}" Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="6" Content="Адрес:" Style="{StaticResource NameItem}" Background="Aquamarine"/>
+                                            <Label Grid.Column="1" Grid.Row="6" Content="{Binding ObjectAddress[0].Address}" Style="{StaticResource ContentItem}"/>
+
+                                            <Label Grid.Row="7" Content="ИНН:" Style="{StaticResource NameItem}" Background="LightGray"/>
+                                            <Label Grid.Column="1" Grid.Row="7" Content="{Binding OrgInfo[0].INN}" Style="{StaticResource ContentItem}"/>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
+                
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
