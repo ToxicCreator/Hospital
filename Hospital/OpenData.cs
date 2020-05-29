@@ -63,7 +63,7 @@ namespace Hospital
 
         public List<EmailItem> Email { get; set; }
 
-        public List<OrgInfoItem> OrgInfo { get; set; }
+        //public List<OrgInfoItem> OrgInfo { get; set; }
 
         public List<ObjectAddressItem> ObjectAddress { get; set; }
 
