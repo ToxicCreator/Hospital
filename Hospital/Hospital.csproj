@@ -109,6 +109,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\AdultHospitals.json" />
+    <Resource Include="Resources\ChildHospitals.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
