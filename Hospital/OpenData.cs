@@ -43,8 +43,6 @@ namespace Hospital
     {
         public string PaidServiceInfo { get; set; }
 
-        public List<WorkingHoursItem> WorkingHours { get; set; }
-
         public string Specialization { get; set; }
 
         public string ChiefName { get; set; }
@@ -62,18 +60,6 @@ namespace Hospital
         public List<ObjectAddressItem> ObjectAddress { get; set; }
 
         public string ShortName { get; set; }
-    }
-
-    public class WorkingHoursItem
-    {
-        public string WorkHours { get; set; }
-
-        public string DayWeek { get; set; }
-    }
-
-    public class ChiefPhoneItem
-    {
-        public List<string> ChiefPhone { get; set; }
     }
 
     public class PublicPhoneItem
